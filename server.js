@@ -55,7 +55,7 @@ function fortune(ctx, body = null, status = 200) {
       }
 
       reject(new Error("Something bad happened"));
-    }, 3 * 1000);
+    }, 1000);
   });
 }
 
@@ -109,6 +109,6 @@ router.delete("/api/services/:id", async (ctx, next) => {
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const port = process.env.PORT || 7080;
+const port = process.env.PORT || 7070;
 const server = http.createServer(app.callback());
 server.listen(port);
