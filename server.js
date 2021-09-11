@@ -7,12 +7,12 @@ const koaBody = require("koa-body");
 const app = new Koa();
 app.use(
   cors({
-    origin: '*',
+    origin: "*",
     credentials: true,
-    'Access-Control-Allow-Origin': true,
-    allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+    "Access-Control-Allow-Origin": true,
+    allowMethods: ["GET", "POST", "PUT", "DELETE"],
   })
-)
+);
 app.use(koaBody({ json: true }));
 
 let nextId = 1;
@@ -54,14 +54,14 @@ const router = new Router();
 function fortune(ctx, body = null, status = 200) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() > 0.25) {
-        ctx.response.status = status;
-        ctx.response.body = body;
-        resolve();
-        return;
-      }
+      // if (Math.random() > 0.25) {
+      ctx.response.status = status;
+      ctx.response.body = body;
+      resolve();
+      return;
+      // }
 
-      reject(new Error("Something bad happened"));
+      // reject(new Error("Something bad happened"));
     }, 1000);
   });
 }
