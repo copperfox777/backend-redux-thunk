@@ -8,7 +8,7 @@
     "watch": "forever -w server.js",
     "list1": "forever list",
     "stop": "forever stop server.js",
-    "nodemon": "nodemon ./server.js localhost 7070"
+    "nodemon": "nodemon ./server.js"
   },
   "author": "",
   "license": "ISC",
